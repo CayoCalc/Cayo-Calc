@@ -1,4 +1,4 @@
-const CACHE = 'cayo-calc-v1';
+const CACHE = 'cayo-calc-v2';
 const SHELL = [
   './',
   './index.html',
