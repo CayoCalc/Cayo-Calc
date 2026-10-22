@@ -4,12 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1020">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Cayo Calc">
-<link rel="manifest" href="./manifest.webmanifest">
-<link rel="apple-touch-icon" href="./icon-192.png">
 <title>Cayo Calc — Why So Legal? Edition</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#0b1020;color:#f7f7fb;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
@@ -56,11 +50,63 @@
 .bannerBirds{position:absolute;right:105px;top:25px;z-index:2;font-size:15px;letter-spacing:5px;opacity:.55;transform:rotate(-8deg)}
 .bannerLogoGlow{position:absolute;left:22%;top:30px;width:180px;height:80px;background:#ffd24a22;filter:blur(22px);border-radius:50%;z-index:0}
 </style></style>
+<style>
+.primary{transition:transform .12s ease,filter .12s ease,box-shadow .12s ease}.primary:active{transform:translateY(2px) scale(.985);filter:brightness(1.08);box-shadow:0 0 0 4px rgba(255,255,255,.10),0 8px 22px #0006}.primary.pressed{animation:optPulse .32s ease-out}@keyframes optPulse{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,.18)}45%{transform:scale(.985);box-shadow:0 0 0 7px rgba(255,255,255,.10)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+.locationGroup{margin-top:10px}.locationGroup:first-child{margin-top:0}.locationHeader{display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:#0e1527;border:1px solid #29324a;border-radius:14px;padding:12px 13px;font-weight:900}.locationHeader .chev{font-size:18px;opacity:.75}.locationPanel{padding-top:9px}.subhead{font-size:11px;letter-spacing:1.1px;font-weight:900;opacity:.55;margin:8px 2px}.saveHint{font-size:11px;opacity:.45;text-align:center;margin-top:9px}
+</style>
 
 <style>
 .banner.bannerImage{position:relative;overflow:hidden;width:100%;aspect-ratio:1536/576;margin:2px 0 18px;padding:0;border:1px solid #5a5570;border-radius:24px;background:#0b1020;box-shadow:0 14px 36px #0008}
 .banner.bannerImage img{display:block;width:100%;height:100%;object-fit:cover;object-position:center center}
 </style>
+
+<style>
+/* ===== ISOLATED MISSION BRIEFING — does not alter the app UI ===== */
+.briefingLaunch{display:block;width:100%;border:1px solid #7a3040;border-radius:14px;padding:13px;background:#17131d;color:#fff;font-weight:900;margin-top:10px}
+.briefingOverlay{position:fixed;inset:0;z-index:5000;display:none;background:#050812;overflow:auto;padding:10px}
+.briefingOverlay.show{display:block}
+.briefingShell{position:relative;width:min(100%,760px);min-height:100%;margin:0 auto;background:#0b1020;border:1px solid #343a52;border-radius:18px;overflow:hidden;box-shadow:0 20px 80px #000c}
+.briefingControls{position:absolute;top:12px;right:12px;z-index:50;display:flex;flex-direction:column;gap:8px}
+.briefingClose,.briefingFullscreen{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #6a3140;border-radius:50%;background:#160f18;color:#fff;font-weight:900;box-shadow:0 4px 18px #0009}
+.briefingClose{font-size:23px;line-height:1}
+.briefingFullscreen{font-size:21px;line-height:1}
+.briefingPage{background:#0b1020;color:#f7f7fb;padding-bottom:18px}
+.briefingBanner{display:block;width:100%;height:auto;margin:0;border:0;border-radius:0;object-fit:initial}
+.briefingBody{padding:12px 14px 0}
+.briefingStampRow{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.briefingStamp{border:2px solid #c52f3d;color:#e64b57;padding:4px 8px;font-size:10px;letter-spacing:1.2px;font-weight:950;transform:rotate(-2deg);opacity:.95}
+.briefingStamp:nth-child(2){transform:rotate(1deg)}
+.briefingCard{background:#12182a;border:1px solid #343a52;border-radius:14px;padding:11px 13px;margin:9px 0}
+.briefingKicker{font-size:10px;letter-spacing:1.6px;font-weight:950;color:#d8b34c;margin-bottom:6px}
+.briefingStatus{font-size:20px;font-weight:950;line-height:1.05}
+.briefingSub{font-size:11px;opacity:.62;margin-top:5px}.briefingDateTime{margin-top:12px;padding-top:10px;border-top:1px solid #29324a;font-size:13px;line-height:1.45;font-weight:850;letter-spacing:.7px;color:#d9dde8}.briefingDateTime::first-letter{}
+.briefingZoneGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.briefingZoneTitle{font-size:12px;font-weight:950;color:#d8b34c;margin-bottom:7px;letter-spacing:.6px}
+.briefingLoc{padding:6px 0;border-top:1px solid #293047;font-size:13px;font-weight:850;color:#e84b56}
+.briefingLoc:first-child{border-top:0;padding-top:0}
+.briefingLocLoot{display:block;color:#fff;font-size:11px;font-weight:700;margin-top:2px;line-height:1.3}
+.briefingBagGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.briefingBag{background:#0d1424;border:1px solid #343a52;border-radius:13px;padding:11px 12px}
+.briefingBagHead{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:6px}
+.briefingBagName{font-size:17px;font-weight:950;color:#fff}
+.briefingBagPct{font-size:17px;font-weight:950;color:#d8b34c}
+.briefingBagItem{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-top:1px solid #252d42;font-size:13px;font-weight:800}
+.briefingBagItem:first-child{border-top:0}
+.briefingBagItem strong{color:#d8b34c;white-space:nowrap}
+.briefingFooter{margin:12px 12px 0;padding-top:10px;border-top:1px solid #343a52;text-align:center;font-size:9px;letter-spacing:1.1px;font-weight:850;opacity:.72;line-height:1.65}
+
+/* True fullscreen: use the whole display and keep the briefing controls over the banner. */
+html:fullscreen .briefingOverlay{padding:0;background:#050812}
+html:fullscreen .briefingShell{width:100%;min-height:100vh;border:0;border-radius:0;box-shadow:none}
+html:fullscreen .briefingPage{padding-bottom:10px}
+html:fullscreen .briefingBody{padding:10px 14px 0}
+html:fullscreen .briefingCard{margin:7px 0;padding:9px 12px}
+html:fullscreen .briefingLoc{padding:5px 0}
+html:fullscreen .briefingBag{padding:9px 11px}
+html:fullscreen .briefingFooter{margin-top:9px;padding-top:8px}
+@media(max-width:560px){.briefingOverlay{padding:0}.briefingShell{border-radius:0;border-left:0;border-right:0}.briefingZoneGrid,.briefingBagGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.briefingBody{padding:10px 10px 0}.briefingStatus{font-size:19px}.briefingCard{padding:10px 11px}.briefingLoc{font-size:12px}.briefingLocLoot{font-size:10px}.briefingBagName,.briefingBagPct{font-size:16px}.briefingBagItem{font-size:12px;padding:4px 0}.briefingFooter{font-size:8px}}
+</style>
+
 </head>
 <body>
 <div class="app">
@@ -90,17 +136,41 @@
 <button type="button" class="secondary" onclick="resetAll()">Reset</button>
 </div>
 
-<div class="card">
-<div class="section" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="toggleLocations()"><span>📍 MAIN COMPOUND LOCATIONS</span><span id="locationChevron">＋</span></div>
-<div id="locationsPanel" style="display:none">
-<div class="note" style="margin-top:0">Assign the main-compound location for each Gold, Painting and Cash stack. Coke and Weed are not tracked here.</div>
-<div id="locationInputs"></div>
-<div class="section" style="margin-top:16px">🗺️ QUICK LOCATION SUMMARY</div>
-<div id="locationSummary" class="locations"></div>
+<div class="card" id="lootLocationsCard">
+<div class="section">📍 LOOT LOCATIONS</div>
+<div class="note" style="margin-top:0">Assign each Gold, Painting, Coke, Weed or Cash stack to the place where you found it. The correct locations are offered automatically.</div>
+<div id="unassignedLocations"></div>
+
+<div class="locationGroup">
+  <div class="locationHeader" onclick="toggleLocationGroup('main')"><span>🏝️ MAIN COMPOUND</span><span id="mainLocationChevron" class="chev">＋</span></div>
+  <div id="mainLocationPanel" class="locationPanel" style="display:none"><div id="mainLocationInputs"></div></div>
 </div>
+
+<div class="locationGroup">
+  <div class="locationHeader" onclick="toggleLocationGroup('airstrip')"><span>🛩️ AIRSTRIP</span><span id="airstripLocationChevron" class="chev">＋</span></div>
+  <div id="airstripLocationPanel" class="locationPanel" style="display:none"><div id="airstripLocationInputs"></div></div>
+</div>
+<div class="saveHint">Your current heist is saved automatically on this device until you press Reset.</div>
+</div>
+
+<div class="card">
+<div class="section">🗺️ HEIST LOOT SUMMARY</div>
+<div id="locationSummary" class="locations"></div>
 </div>
 
 <div class="card" id="result"><div class="empty">Add your available loot, then hit <b>Optimize Loot</b>.</div></div>
+<button type="button" id="briefingLaunch" class="briefingLaunch" onclick="openBriefing()">📋 CREATE MISSION BRIEFING</button>
+</div>
+
+
+<div id="briefingOverlay" class="briefingOverlay" aria-hidden="true">
+  <div class="briefingShell">
+    <div class="briefingControls">
+      <button type="button" class="briefingClose" onclick="closeBriefing()" aria-label="Close briefing">×</button>
+      <button type="button" class="briefingFullscreen" onclick="toggleBriefingFullscreen()" aria-label="Full screen briefing" title="Full screen">⛶</button>
+    </div>
+    <div id="briefingPage" class="briefingPage"></div>
+  </div>
 </div>
 
 <div id="locationPickerOverlay" class="pickerOverlay" onclick="if(event.target===this)closeLocationPicker()">
@@ -114,31 +184,37 @@
 
 <script>
 const TYPES=[
- {k:'gold',n:'Gold',e:'🥇',space:66.7,value:328000,split:true},
- {k:'painting',n:'Painting',e:'🖼️',space:50,value:196000,split:false},
- {k:'coke',n:'Cocaine',e:'❄️',space:50,value:198000,split:true},
- {k:'weed',n:'Weed',e:'🌿',space:37.5,value:130000,split:true},
- {k:'cash',n:'Cash',e:'💵',space:25,value:90000,split:true}
+ {k:'gold',n:'Gold',e:'🥇',space:66.7,value:297750,split:true},
+ {k:'painting',n:'Painting',e:'🖼️',space:50,value:151875,split:false},
+ {k:'coke',n:'Cocaine',e:'❄️',space:50,value:180225,split:true},
+ {k:'weed',n:'Weed',e:'🌿',space:37.5,value:119475,split:true},
+ {k:'cash',n:'Cash',e:'💵',space:25,value:72900,split:true}
 ];
 let bags=2;
 let mode='normal';
 let qty={gold:0,painting:0,coke:0,weed:0,cash:0};
 let cuts=[85,15];
-const LOCATION_TYPES=['gold','painting','cash'];
+const LOCATION_TYPES=['gold','painting','coke','weed','cash'];
+const MAIN_LOCATIONS=['Office','Basement','North Storage','South Storage','West Storage'];
+const AIRSTRIP_LOCATIONS=['Hangar Bottom Cage','Hangar Top Cage','Storage Shed'];
+const SUMMARY_LOCATIONS=[...MAIN_LOCATIONS,...AIRSTRIP_LOCATIONS];
 const LOCATION_OPTIONS={
- gold:['Basement','North Storage','South Storage','West Storage'],
- painting:['Office','Basement','North Storage','South Storage','West Storage'],
- cash:['Basement','North Storage','South Storage','West Storage']
+ gold:MAIN_LOCATIONS.filter(x=>x!=='Office'),
+ painting:[...MAIN_LOCATIONS],
+ coke:[...AIRSTRIP_LOCATIONS],
+ weed:[...AIRSTRIP_LOCATIONS],
+ cash:[...MAIN_LOCATIONS.filter(x=>x!=='Office'),...AIRSTRIP_LOCATIONS]
 };
-const locationAssignments={gold:[],painting:[],cash:[]};
-const SUMMARY_LOCATIONS=['Office','Basement','North Storage','South Storage','West Storage'];
-const PRIMARY={
- tequila:{name:'Sinsimito Tequila',normal:630000,hard:693000},
- necklace:{name:'Ruby Necklace',normal:700000,hard:770000},
- bonds:{name:'Bearer Bonds',normal:770000,hard:847000},
- diamond:{name:'Pink Diamond',normal:1300000,hard:1430000},
- panther:{name:'Panther Statue',normal:1900000,hard:2090000}
-};
+function isValidLocation(k,loc){ return !!(LOCATION_OPTIONS[k]||[]).includes(loc); }
+function sanitizeLocationAssignments(){
+  LOCATION_TYPES.forEach(k=>{
+    locationAssignments[k]=(locationAssignments[k]||[]).map(loc=>isValidLocation(k,loc)?loc:'');
+    syncLocationAssignments(k);
+  });
+}
+const locationAssignments={gold:[],painting:[],coke:[],weed:[],cash:[]};
+const LOCATION_STORAGE_KEY='cayoCalcState_v17';
+let locationGroups={main:false,airstrip:false};
 
 function bagsBy(n){
  bags=Math.max(1,Math.min(4,bags+n));
@@ -146,24 +222,62 @@ function bagsBy(n){
  const defaults={1:[100],2:[85,15],3:[70,15,15],4:[55,15,15,15]};
  cuts=defaults[bags].slice();
  renderCuts();
+ saveState();
 }
 function lootBy(k,n){
  qty[k]=Math.max(0,qty[k]+n);
  document.getElementById(k+'Count').textContent=qty[k];
  syncLocationAssignments(k);
  renderLocations();
+ saveState();
+}
+
+function saveState(){
+ try{
+   localStorage.setItem(LOCATION_STORAGE_KEY,JSON.stringify({bags,mode,qty,cuts,locationAssignments,locationGroups}));
+ }catch(e){}
+}
+function loadState(){
+ try{
+   const raw=localStorage.getItem(LOCATION_STORAGE_KEY);
+   if(!raw)return false;
+   const st=JSON.parse(raw);
+   if(!st||!st.qty)return false;
+   bags=Math.max(1,Math.min(4,Number(st.bags)||2));
+   mode=st.mode==='hard'?'hard':'normal';
+   qty={gold:0,painting:0,coke:0,weed:0,cash:0,...st.qty};
+   cuts=Array.isArray(st.cuts)?st.cuts.slice(0,bags).map(Number):[85,15];
+   const defaults={1:[100],2:[85,15],3:[70,15,15],4:[55,15,15,15]};
+   if(cuts.length!==bags)cuts=defaults[bags].slice();
+   LOCATION_TYPES.forEach(k=>{locationAssignments[k]=Array.isArray(st.locationAssignments?.[k])?st.locationAssignments[k].slice(0,qty[k]):[];syncLocationAssignments(k)});
+   sanitizeLocationAssignments();
+   locationGroups={main:!!st.locationGroups?.main,airstrip:!!st.locationGroups?.airstrip};
+   document.getElementById('bagCount').textContent=bags;
+   TYPES.forEach(t=>document.getElementById(t.k+'Count').textContent=qty[t.k]);
+   setMode(mode);
+   applyLocationGroupUI();
+   return true;
+ }catch(e){return false}
 }
 function syncLocationAssignments(k){
  if(!LOCATION_TYPES.includes(k)) return;
  while(locationAssignments[k].length<qty[k]) locationAssignments[k].push('');
  if(locationAssignments[k].length>qty[k]) locationAssignments[k].length=qty[k];
 }
-function toggleLocations(){
- const p=document.getElementById('locationsPanel');
- const c=document.getElementById('locationChevron');
- const open=p.style.display!=='none';
- p.style.display=open?'none':'block';
- c.textContent=open?'＋':'−';
+function toggleLocationGroup(group){
+ locationGroups[group]=!locationGroups[group];
+ applyLocationGroupUI();
+ saveState();
+}
+function applyLocationGroupUI(){
+ ['main','airstrip'].forEach(group=>{
+   const p=document.getElementById(group==='main'?'mainLocationPanel':'airstripLocationPanel');
+   const c=document.getElementById(group==='main'?'mainLocationChevron':'airstripLocationChevron');
+   if(!p||!c)return;
+   const open=!!locationGroups[group];
+   p.style.display=open?'block':'none';
+   c.textContent=open?'−':'＋';
+ });
 }
 let pickerTarget=null;
 function openLocationPicker(k,i){
@@ -188,40 +302,59 @@ function chooseLocation(v){
  pickerTarget=null;
  closeLocationPicker();
  renderLocations();
+ saveState();
 }
 function closeLocationPicker(){
  pickerTarget=null;
  document.getElementById('locationPickerOverlay').classList.remove('show');
  document.body.style.overflow='';
 }
-function setLocation(k,i,v){
- locationAssignments[k][i]=v;
- renderLocationSummary();
+function renderLocationRow(k,i){
+ const t=TYPES.find(x=>x.k===k);
+ const assigned=locationAssignments[k][i]||'';
+ return '<div class="locrow"><div class="loctop"><span>'+t.e+' '+t.n+' '+(i+1)+'</span><span class="badge">'+(assigned||'Unassigned')+'</span></div><button type="button" class="locselect" onclick="openLocationPicker(\''+k+'\','+i+')">'+(assigned||'Select location…')+' <span style="float:right;opacity:.65">⌄</span></button></div>';
 }
 function renderLocations(){
+ sanitizeLocationAssignments();
  LOCATION_TYPES.forEach(k=>syncLocationAssignments(k));
- const box=document.getElementById('locationInputs');
- let html='';
+ const locationCard=document.getElementById('lootLocationsCard');
+ const totalLoot=LOCATION_TYPES.reduce((sum,k)=>sum+Number(qty[k]||0),0);
+ if(locationCard) locationCard.style.display=totalLoot>0?'block':'none';
+ const unassigned=document.getElementById('unassignedLocations');
+ const main=document.getElementById('mainLocationInputs');
+ const air=document.getElementById('airstripLocationInputs');
+ let uh='',mh='',ah='';
  LOCATION_TYPES.forEach(k=>{
    for(let i=0;i<qty[k];i++){
-     const t=TYPES.find(x=>x.k===k);
      const assigned=locationAssignments[k][i]||'';
-     html+='<div class="locrow"><div class="loctop"><span>'+t.e+' '+t.n+' '+(i+1)+'</span><span class="badge">'+(assigned||'Unassigned')+'</span></div>';
-     html+='<button type="button" class="locselect" onclick="openLocationPicker(\''+k+'\','+i+')">'+(assigned||'Select location…')+' <span style="float:right;opacity:.65">⌄</span></button>';
-     html+='</div>';
+     if(!assigned)uh+=renderLocationRow(k,i);
+     else if(MAIN_LOCATIONS.includes(assigned))mh+=renderLocationRow(k,i);
+     else if(AIRSTRIP_LOCATIONS.includes(assigned))ah+=renderLocationRow(k,i);
    }
  });
- box.innerHTML=html||'<div class="empty">Add Gold, Paintings or Cash above to assign locations.</div>';
+ unassigned.innerHTML=uh?'<div class="subhead">UNASSIGNED LOOT</div>'+uh:'';
+ main.innerHTML=mh||'<div class="empty">No loot assigned to the main compound yet.</div>';
+ air.innerHTML=ah||'<div class="empty">No loot assigned to the airstrip yet.</div>';
+ applyLocationGroupUI();
  renderLocationSummary();
 }
 function renderLocationSummary(){
  const box=document.getElementById('locationSummary');
- let html='';
- SUMMARY_LOCATIONS.forEach(loc=>{
+ let html='<div class="subhead">🏝️ MAIN COMPOUND</div>';
+ MAIN_LOCATIONS.forEach(loc=>{
    const found=[];
    LOCATION_TYPES.forEach(k=>{
      const t=TYPES.find(x=>x.k===k);
-     locationAssignments[k].forEach((assigned,i)=>{if(assigned===loc)found.push(t.e+' '+t.n);});
+     locationAssignments[k].forEach(assigned=>{if(assigned===loc)found.push(t.e+' '+t.n);});
+   });
+   html+='<div class="locsummary"><strong>'+loc+'</strong>'+(found.length?found.map(x=>'<div class="item"><span>'+x+'</span></div>').join(''):'<div class="empty">Empty</div>')+'</div>';
+ });
+ html+='<div class="subhead" style="margin-top:14px">🛩️ AIRSTRIP</div>';
+ AIRSTRIP_LOCATIONS.forEach(loc=>{
+   const found=[];
+   LOCATION_TYPES.forEach(k=>{
+     const t=TYPES.find(x=>x.k===k);
+     locationAssignments[k].forEach(assigned=>{if(assigned===loc)found.push(t.e+' '+t.n);});
    });
    html+='<div class="locsummary"><strong>'+loc+'</strong>'+(found.length?found.map(x=>'<div class="item"><span>'+x+'</span></div>').join(''):'<div class="empty">Empty</div>')+'</div>';
  });
@@ -233,6 +366,7 @@ function setMode(m){
  const nb=document.getElementById('normalBtn'), hb=document.getElementById('hardBtn');
  nb.style.background=m==='normal'?'#fff':'#29324a'; nb.style.color=m==='normal'?'#0b1020':'#fff';
  hb.style.background=m==='hard'?'#fff':'#29324a'; hb.style.color=m==='hard'?'#0b1020':'#fff';
+ saveState();
 }
 function updatePrimaryLabel(){}
 function renderCuts(){
@@ -256,19 +390,22 @@ function cutBy(i,delta){
  if(next<15||next>85)return;
  cuts[i]=next;
  renderCuts();
+ saveState();
 }
 function cutsValid(){return cuts.reduce((a,b)=>a+b,0)===100 && cuts.every(c=>c>=15&&c%5===0)}
 
 function resetAll(){
  bags=2;mode='normal';qty={gold:0,painting:0,coke:0,weed:0,cash:0};cuts=[85,15];
+ locationGroups={main:false,airstrip:false};
+ LOCATION_TYPES.forEach(k=>locationAssignments[k]=[]);
+ closeLocationPicker();
+ try{localStorage.removeItem(LOCATION_STORAGE_KEY)}catch(e){}
  document.getElementById('bagCount').textContent='2';
  TYPES.forEach(t=>document.getElementById(t.k+'Count').textContent='0');
- locationAssignments.gold=[];
- locationAssignments.painting=[];
- locationAssignments.cash=[];
  document.getElementById('result').innerHTML='<div class="empty">Add your available loot, then hit <b>Optimize Loot</b>.</div>';
  renderCuts();
  renderLocations();
+ applyLocationGroupUI();
 }
 
 /*
@@ -278,6 +415,8 @@ function resetAll(){
  Objective: maximize secondary-loot value.
 */
 function optimize(){
+ const btn=document.querySelector('.primary');
+ if(btn){btn.classList.remove('pressed');void btn.offsetWidth;btn.classList.add('pressed');setTimeout(()=>btn.classList.remove('pressed'),350);}
  if(!cutsValid()){
    document.getElementById('result').innerHTML='<div class="empty">⚠️ Your player cuts must add up to <b>100%</b>, using 5% increments and at least 15% per player.</div>';
    return;
@@ -386,16 +525,118 @@ function optimize(){
  html+='</div><div class="note"><b>Loot rules:</b> paintings are whole 50% stacks and cannot be chopped. Gold, cocaine, weed and cash may be taken partially.</div>';
  document.getElementById('result').innerHTML=html;
 }
+
+/* ===== ISOLATED MISSION BRIEFING LOGIC ===== */
+function briefingLootByLocation(loc){
+  const found=[];
+  LOCATION_TYPES.forEach(k=>{
+    const t=TYPES.find(x=>x.k===k);
+    (locationAssignments[k]||[]).forEach((assigned,i)=>{
+      if(assigned===loc) found.push(t.e+' '+t.n+' '+(i+1));
+    });
+  });
+  return found;
+}
+function briefingZoneHtml(title, locations){
+  let h='<div class="briefingCard"><div class="briefingZoneTitle">'+title+'</div>';
+  locations.forEach(loc=>{
+    const loot=briefingLootByLocation(loc);
+    h+='<div class="briefingLoc">'+loc;
+    if(loot.length) h+='<span class="briefingLocLoot">'+loot.join(' • ')+'</span>';
+    else h+='<span class="briefingLocLoot" style="opacity:.35">EMPTY</span>';
+    h+='</div>';
+  });
+  return h+'</div>';
+}
+function briefingBagsHtml(){
+  const result=document.getElementById('result');
+  const bagEls=result?result.querySelectorAll('.bag'):[];
+  if(!bagEls.length)return '<div class="briefingCard"><div class="briefingSub">Optimize your loot first.</div></div>';
+  let h='<div class="briefingBagGrid">';
+  bagEls.forEach((bag,i)=>{
+    const top=bag.querySelector('.bagtop');
+    const spans=top?top.querySelectorAll('span'):[];
+    const used=spans.length>1?spans[1].textContent.trim():'';
+    h+='<div class="briefingBag"><div class="briefingBagHead"><span class="briefingBagName">BAG '+(i+1)+'</span><span class="briefingBagPct">'+used+'</span></div>';
+    bag.querySelectorAll('.item').forEach(item=>{
+      const text=item.querySelector('span')?.textContent?.trim()||'';
+      const pct=item.querySelector('strong')?.textContent?.trim()||'';
+      if(text) h+='<div class="briefingBagItem"><span>'+text+'</span><strong>'+pct+'</strong></div>';
+    });
+    h+='</div>';
+  });
+  return h+'</div>';
+}
+function openBriefing(){
+  const result=document.getElementById('result');
+  const bagEls=result?result.querySelectorAll('.bag'):[];
+  if(!bagEls.length){alert('Optimize your loot first, then create the mission briefing.');return;}
+  const appBanner=document.querySelector('.banner.bannerImage img');
+  const page=document.getElementById('briefingPage');
+  const bannerSrc=appBanner?appBanner.getAttribute('src'):'';
+  page.innerHTML='';
+  const img=document.createElement('img');
+  img.className='briefingBanner';
+  img.src=bannerSrc;
+  img.alt='Cayo Calc — Why So Legal? Edition';
+  page.appendChild(img);
+  const body=document.createElement('div');body.className='briefingBody';
+  body.innerHTML='<div class="briefingStampRow"><span class="briefingStamp">CLASSIFIED</span><span class="briefingStamp">OPERATIONAL BRIEFING</span></div>'+
+    '<div class="briefingCard"><div class="briefingKicker">MISSION STATUS</div><div class="briefingStatus">SECONDARY LOOT PLAN LOCKED</div><div class="briefingSub">'+bags+' BAG'+(bags===1?'':'S')+' • OPTIMIZED FOR MAXIMUM SECONDARY LOOT</div><div class="briefingDateTime">MISSION DATE • '+new Date().toLocaleDateString('en-ZA',{day:'2-digit',month:'long',year:'numeric'}).toUpperCase()+' &nbsp; | &nbsp; TIME • '+new Date().toLocaleTimeString('en-ZA',{hour:'2-digit',minute:'2-digit',hour12:false})+'</div></div>'+
+    '<div class="briefingKicker" style="margin-top:18px">LOOT LOCATIONS</div>'+
+    '<div class="briefingZoneGrid">'+briefingZoneHtml('🏝️ MAIN COMPOUND',MAIN_LOCATIONS)+briefingZoneHtml('🛩️ AIRSTRIP',AIRSTRIP_LOCATIONS)+'</div>'+
+    '<div class="briefingKicker" style="margin-top:18px">BEST LOOT DISTRIBUTION</div>'+briefingBagsHtml()+
+    '<div class="briefingFooter">GENERATED BY CAYO CALC • WHY SO LEGAL?<br>CLASSIFIED — FOR CREW USE ONLY</div>';
+  page.appendChild(body);
+  document.getElementById('briefingOverlay').classList.add('show');
+  document.getElementById('briefingOverlay').setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+async function toggleBriefingFullscreen(){
+  try{
+    if(document.fullscreenElement){
+      await document.exitFullscreen();
+      return;
+    }
+    const target=document.documentElement;
+    if(target.requestFullscreen) await target.requestFullscreen();
+  }catch(err){
+    console.warn('Fullscreen unavailable:',err);
+  }
+}
+function closeBriefing(){
+  if(document.fullscreenElement){
+    try{document.exitFullscreen();}catch(err){}
+  }
+  document.getElementById('briefingOverlay').classList.remove('show');
+  document.getElementById('briefingOverlay').setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+function syncBriefingFullscreenButton(){
+  const btn=document.querySelector('.briefingFullscreen');
+  if(!btn)return;
+  const fs=!!document.fullscreenElement;
+  btn.textContent=fs?'⛶':'⛶';
+  btn.setAttribute('aria-label',fs?'Exit full screen':'Full screen briefing');
+  btn.title=fs?'Exit full screen':'Full screen';
+}
+document.addEventListener('fullscreenchange',syncBriefingFullscreenButton);
+function syncBriefingLauncher(){
+  const btn=document.getElementById('briefingLaunch');
+  const ready=!!document.querySelector('#result .bag');
+  if(btn){ btn.classList.toggle('ready',ready); }
+}
+const briefingObserver=new MutationObserver(syncBriefingLauncher);
+function initBriefingObserver(){
+  const r=document.getElementById('result');
+  if(r){briefingObserver.observe(r,{childList:true,subtree:true});syncBriefingLauncher();}
+}
+
+const restored=loadState();
 renderCuts();
 renderLocations();
-</script>
-
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js').catch(() => {});
-  });
-}
+if(restored)saveState();
+initBriefingObserver();
 </script>
 </body>
 </html>
