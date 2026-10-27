@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1020">
-<link rel="manifest" href="./manifest.webmanifest">
 <title>Cayo Calc — Why So Legal? Edition</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#0b1020;color:#f7f7fb;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
@@ -13,7 +12,7 @@
 .row{display:flex;align-items:center;justify-content:space-between;padding:10px 0}.lootname{display:flex;align-items:center;gap:9px;font-weight:800}.emoji{font-size:23px}
 .stepper{display:flex;align-items:center;gap:9px}.stepper button{width:38px;height:38px;border:0;border-radius:12px;background:#29324a;color:#fff;font-size:23px}.count{min-width:25px;text-align:center;font-weight:900}
 .primary{width:100%;border:0;border-radius:16px;padding:16px;background:#fff;color:#0b1020;font-weight:950;font-size:17px;margin-top:5px}.secondary{width:100%;border:1px solid #39445f;border-radius:14px;padding:12px;background:transparent;color:#fff;font-weight:800;margin-top:10px}
-.bags{display:grid;gap:10px}.bag{background:#0e1527;border:1px solid #29324a;border-radius:15px;padding:13px}.bagtop{display:flex;justify-content:space-between;font-weight:900;margin-bottom:8px}.bar{height:9px;background:#29324a;border-radius:9px;overflow:hidden}.fill{height:100%;background:#fff}.item{display:flex;justify-content:space-between;font-size:13px;margin-top:7px}.note{font-size:12px;opacity:.6;line-height:1.45;margin-top:12px}.badge{display:inline-block;padding:5px 8px;border-radius:9px;background:#26304a;font-size:11px;font-weight:900}.empty{text-align:center;opacity:.55;padding:12px}.profit{font-size:25px;font-weight:950;margin:4px 0 12px}.cuts{display:grid;gap:8px;margin-top:8px}.cutrow{display:flex;align-items:center;justify-content:space-between;background:#0e1527;border:1px solid #29324a;border-radius:13px;padding:9px 10px}.cutname{font-weight:850}.cutcontrol{display:flex;align-items:center;gap:8px}.cutcontrol button{width:34px;height:34px;border:0;border-radius:10px;background:#29324a;color:#fff;font-size:20px}.cutpct{min-width:44px;text-align:center;font-weight:950}.cutstatus{font-size:11px;line-height:1.4;margin-top:8px}.valid{color:#9ff0b5}.invalid{color:#ff9f9f}.muted{opacity:.6;font-size:12px}.rule{font-size:11px;opacity:.48;margin-top:3px}.locations{display:grid;gap:8px}.locrow{background:#0e1527;border:1px solid #29324a;border-radius:13px;padding:10px}.loctop{display:flex;justify-content:space-between;align-items:center;font-weight:850}.locselect{margin-top:8px;width:100%;background:#29324a;color:#fff;border:0;border-radius:10px;padding:10px;font-weight:750;cursor:pointer;text-align:left}.pickerOverlay{position:fixed;inset:0;background:rgba(3,6,15,.72);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:22px;z-index:1000}.pickerOverlay.show{display:flex}.picker{width:min(100%,430px);background:#151c30;border:1px solid #39445f;border-radius:22px;box-shadow:0 20px 70px #000b;padding:16px;animation:pickerIn .16s ease-out}.pickerTitle{font-size:17px;font-weight:950;margin:2px 4px 12px}.pickerSub{font-size:12px;opacity:.6;margin:-6px 4px 12px}.pickerOptions{display:grid;gap:8px}.pickerOption{width:100%;border:1px solid #303b55;background:#0e1527;color:#fff;border-radius:14px;padding:14px;text-align:left;font-size:15px;font-weight:800}.pickerOption:active{transform:scale(.985);background:#29324a}.pickerCancel{width:100%;border:1px solid #39445f;background:transparent;color:#fff;border-radius:14px;padding:12px;margin-top:10px;font-weight:800}@keyframes pickerIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}.banner{position:relative;overflow:hidden;background:linear-gradient(135deg,#171f35 0%,#0e1527 55%,#1a233b 100%);border:1px solid #39445f;border-radius:22px;padding:16px 17px;margin:2px 0 16px;box-shadow:0 12px 34px #0005}<style>
+.bags{display:grid;gap:10px}.bag{background:#0e1527;border:1px solid #29324a;border-radius:15px;padding:13px}.bagtop{display:flex;justify-content:space-between;font-weight:900;margin-bottom:8px}.bar{height:9px;background:#29324a;border-radius:9px;overflow:hidden}.fill{height:100%;background:#fff}.item{display:flex;justify-content:space-between;font-size:13px;margin-top:7px}.note{font-size:12px;opacity:.6;line-height:1.45;margin-top:12px}.badge{display:inline-block;padding:5px 8px;border-radius:9px;background:#26304a;font-size:11px;font-weight:900}.empty{text-align:center;opacity:.55;padding:12px}.profit{font-size:25px;font-weight:950;margin:4px 0 12px}.cuts{display:grid;gap:8px;margin-top:8px}.cutrow{display:flex;align-items:center;justify-content:space-between;background:#0e1527;border:1px solid #29324a;border-radius:13px;padding:9px 10px}.cutname{font-weight:850}.cutcontrol{display:flex;align-items:center;gap:8px}.cutcontrol button{width:34px;height:34px;border:0;border-radius:10px;background:#29324a;color:#fff;font-size:20px}.cutpct{min-width:44px;text-align:center;font-weight:950}.cutstatus{font-size:11px;line-height:1.4;margin-top:8px}.valid{color:#9ff0b5}.invalid{color:#ff9f9f}.muted{opacity:.6;font-size:12px}.rule{font-size:11px;opacity:.48;margin-top:3px}.locations{display:grid;gap:8px}.locrow{background:#0e1527;border:1px solid #29324a;border-radius:13px;padding:10px}.loctop{display:flex;justify-content:space-between;align-items:center;font-weight:850}.locselect{margin-top:8px;width:100%;background:#29324a;color:#fff;border:0;border-radius:10px;padding:10px;font-weight:750;cursor:pointer;text-align:left}.pickerOverlay{position:fixed;inset:0;background:rgba(3,6,15,.72);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:22px;z-index:1000}.pickerOverlay.show{display:flex}.picker{width:min(100%,430px);background:#151c30;border:1px solid #39445f;border-radius:22px;box-shadow:0 20px 70px #000b;padding:16px;animation:pickerIn .16s ease-out}.pickerHeader{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 4px 12px}.pickerTitle{font-size:17px;font-weight:950}.pickerClear{border:1px solid #7a3b52;background:#251522;color:#ffb7c9;border-radius:10px;padding:7px 10px;font-size:11px;font-weight:900;white-space:nowrap}.pickerClear:active{transform:scale(.98);background:#3a2030}.pickerSub{font-size:12px;opacity:.6;margin:-6px 4px 12px}.pickerOptions{display:grid;gap:8px}.pickerOption{width:100%;border:1px solid #303b55;background:#0e1527;color:#fff;border-radius:14px;padding:14px;text-align:left;font-size:15px;font-weight:800}.pickerOption:active{transform:scale(.985);background:#29324a}.pickerCancel{width:100%;border:1px solid #39445f;background:transparent;color:#fff;border-radius:14px;padding:12px;margin-top:10px;font-weight:800}.pickerBack{width:100%;border:1px solid #39445f;background:#29324a;color:#fff;border-radius:14px;padding:11px;margin-top:10px;font-weight:850}.addLootCard{margin-top:0}.addLootButton{width:100%;border:1px solid #39445f;border-radius:16px;padding:16px;background:#0e1527;color:#fff;font-weight:950;font-size:17px}.addLootButton:active{transform:scale(.985);background:#29324a}.pickerStep{font-size:10px;letter-spacing:1.5px;font-weight:950;color:#d8b34c;margin:0 4px 7px}.pickerSuccess{font-size:11px;color:#9ff0b5;margin:8px 4px 0;font-weight:800}.pickerOption small{display:block;font-size:11px;opacity:.52;font-weight:700;margin-top:3px}@keyframes pickerIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}.banner{position:relative;overflow:hidden;background:linear-gradient(135deg,#171f35 0%,#0e1527 55%,#1a233b 100%);border:1px solid #39445f;border-radius:22px;padding:16px 17px;margin:2px 0 16px;box-shadow:0 12px 34px #0005}<style>
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Righteous&family=Titan+One&display=swap');
 .banner{
  position:relative;overflow:hidden;min-height:190px;padding:22px 20px 18px;margin:2px 0 18px;
@@ -52,6 +51,7 @@
 .bannerLogoGlow{position:absolute;left:22%;top:30px;width:180px;height:80px;background:#ffd24a22;filter:blur(22px);border-radius:50%;z-index:0}
 </style></style>
 <style>
+.actionStack{display:grid;gap:10px;margin:12px 0}.actionStack .primary{margin-top:0}.actionStack .secondary{margin-top:0}.secondary:active{transform:scale(.985);background:#29324a}
 .primary{transition:transform .12s ease,filter .12s ease,box-shadow .12s ease}.primary:active{transform:translateY(2px) scale(.985);filter:brightness(1.08);box-shadow:0 0 0 4px rgba(255,255,255,.10),0 8px 22px #0006}.primary.pressed{animation:optPulse .32s ease-out}@keyframes optPulse{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,.18)}45%{transform:scale(.985);box-shadow:0 0 0 7px rgba(255,255,255,.10)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,0)}}
 .locationGroup{margin-top:10px}.locationGroup:first-child{margin-top:0}.locationHeader{display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:#0e1527;border:1px solid #29324a;border-radius:14px;padding:12px 13px;font-weight:900}.locationHeader .chev{font-size:18px;opacity:.75}.locationPanel{padding-top:9px}.subhead{font-size:11px;letter-spacing:1.1px;font-weight:900;opacity:.55;margin:8px 2px}.saveHint{font-size:11px;opacity:.45;text-align:center;margin-top:9px}
 </style>
@@ -120,38 +120,10 @@ html:fullscreen .briefingFooter{margin-top:9px;padding-top:8px}
 <div class="row"><strong>Players / bags</strong><div class="stepper"><button type="button" onclick="bagsBy(-1)">−</button><div class="count" id="bagCount">2</div><button type="button" onclick="bagsBy(1)">+</button></div></div>
 </div>
 
-<div class="card">
-<div class="section">AVAILABLE LOOT</div>
-
-<div class="row"><div><div class="lootname"><span class="emoji">🥇</span>Gold <span class="badge">66.7%</span></div><div class="rule">Splittable</div></div><div class="stepper"><button type="button" onclick="lootBy('gold',-1)">−</button><div class="count" id="goldCount">0</div><button type="button" onclick="lootBy('gold',1)">+</button></div></div>
-
-<div class="row"><div><div class="lootname"><span class="emoji">🖼️</span>Painting <span class="badge">50%</span></div><div class="rule">Whole stack only</div></div><div class="stepper"><button type="button" onclick="lootBy('painting',-1)">−</button><div class="count" id="paintingCount">0</div><button type="button" onclick="lootBy('painting',1)">+</button></div></div>
-
-<div class="row"><div><div class="lootname"><span class="emoji">❄️</span>Cocaine <span class="badge">50%</span></div><div class="rule">Splittable</div></div><div class="stepper"><button type="button" onclick="lootBy('coke',-1)">−</button><div class="count" id="cokeCount">0</div><button type="button" onclick="lootBy('coke',1)">+</button></div></div>
-
-<div class="row"><div><div class="lootname"><span class="emoji">🌿</span>Weed <span class="badge">37.5%</span></div><div class="rule">Splittable</div></div><div class="stepper"><button type="button" onclick="lootBy('weed',-1)">−</button><div class="count" id="weedCount">0</div><button type="button" onclick="lootBy('weed',1)">+</button></div></div>
-
-<div class="row"><div><div class="lootname"><span class="emoji">💵</span>Cash <span class="badge">25%</span></div><div class="rule">Splittable</div></div><div class="stepper"><button type="button" onclick="lootBy('cash',-1)">−</button><div class="count" id="cashCount">0</div><button type="button" onclick="lootBy('cash',1)">+</button></div></div>
-
-<button type="button" class="primary" onclick="optimize()">🚀 OPTIMIZE LOOT</button>
-<button type="button" class="secondary" onclick="resetAll()">Reset</button>
-</div>
-
-<div class="card" id="lootLocationsCard">
-<div class="section">📍 LOOT LOCATIONS</div>
-<div class="note" style="margin-top:0">Assign each Gold, Painting, Coke, Weed or Cash stack to the place where you found it. The correct locations are offered automatically.</div>
-<div id="unassignedLocations"></div>
-
-<div class="locationGroup">
-  <div class="locationHeader" onclick="toggleLocationGroup('main')"><span>🏝️ MAIN COMPOUND</span><span id="mainLocationChevron" class="chev">＋</span></div>
-  <div id="mainLocationPanel" class="locationPanel" style="display:none"><div id="mainLocationInputs"></div></div>
-</div>
-
-<div class="locationGroup">
-  <div class="locationHeader" onclick="toggleLocationGroup('airstrip')"><span>🛩️ AIRSTRIP</span><span id="airstripLocationChevron" class="chev">＋</span></div>
-  <div id="airstripLocationPanel" class="locationPanel" style="display:none"><div id="airstripLocationInputs"></div></div>
-</div>
-<div class="saveHint">Your current heist is saved automatically on this device until you press Reset.</div>
+<div class="card addLootCard">
+<div class="section">📦 ADD LOOT</div>
+<div class="note" style="margin-top:0">Add each stack by choosing its location first. The loot and location are recorded together.</div>
+<button type="button" class="addLootButton" onclick="openAddLoot()">➕ ADD LOOT</button>
 </div>
 
 <div class="card">
@@ -159,7 +131,11 @@ html:fullscreen .briefingFooter{margin-top:9px;padding-top:8px}
 <div id="locationSummary" class="locations"></div>
 </div>
 
-<div class="card" id="result"><div class="empty">Add your available loot, then hit <b>Optimize Loot</b>.</div></div>
+<div class="card" id="result"><div class="empty">Add your loot, then hit <b>Optimize Loot</b>.</div></div>
+<div class="actionStack">
+<button type="button" class="primary" id="optimizeButton" onclick="optimize()">⚡ OPTIMIZE LOOT</button>
+<button type="button" class="secondary" id="resetButton" onclick="resetAll()">↻ RESET HEIST</button>
+</div>
 <button type="button" id="briefingLaunch" class="briefingLaunch" onclick="openBriefing()">📋 CREATE MISSION BRIEFING</button>
 </div>
 
@@ -176,10 +152,13 @@ html:fullscreen .briefingFooter{margin-top:9px;padding-top:8px}
 
 <div id="locationPickerOverlay" class="pickerOverlay" onclick="if(event.target===this)closeLocationPicker()">
   <div class="picker" role="dialog" aria-modal="true">
-    <div id="pickerTitle" class="pickerTitle">Select location</div>
-    <div id="pickerSub" class="pickerSub"></div>
+    <div class="pickerHeader"><div id="pickerTitle" class="pickerTitle">Add Loot</div><button type="button" id="pickerClear" class="pickerClear" style="display:none" onclick="clearCurrentLocation()">CLEAR LOCATION</button></div>
+    <div id="pickerSub" class="pickerSub">Choose the loot location first.</div>
+    <div id="pickerStep" class="pickerStep">STEP 1 OF 2 • LOCATION</div>
     <div id="pickerOptions" class="pickerOptions"></div>
-    <button type="button" class="pickerCancel" onclick="closeLocationPicker()">Cancel</button>
+    <button type="button" id="pickerBack" class="pickerBack" style="display:none" onclick="addLootBack()">← Back to locations</button>
+    <div id="pickerSuccess" class="pickerSuccess" style="display:none"></div>
+    <button type="button" class="pickerCancel" onclick="closeLocationPicker()">Done</button>
   </div>
 </div>
 
@@ -214,7 +193,7 @@ function sanitizeLocationAssignments(){
   });
 }
 const locationAssignments={gold:[],painting:[],coke:[],weed:[],cash:[]};
-const LOCATION_STORAGE_KEY='cayoCalcState_v17';
+const LOCATION_STORAGE_KEY='cayoCalcState_v19_dev3';
 let locationGroups={main:false,airstrip:false};
 
 function bagsBy(n){
@@ -227,10 +206,19 @@ function bagsBy(n){
 }
 function lootBy(k,n){
  qty[k]=Math.max(0,qty[k]+n);
- document.getElementById(k+'Count').textContent=qty[k];
+ const countEl=document.getElementById(k+'Count'); if(countEl) countEl.textContent=qty[k];
  syncLocationAssignments(k);
  renderLocations();
  saveState();
+}
+
+function addLootStack(k,loc){
+  if(!isValidLocation(k,loc))return;
+  qty[k]=Number(qty[k]||0)+1;
+  syncLocationAssignments(k);
+  locationAssignments[k][qty[k]-1]=loc;
+  renderLocations();
+  saveState();
 }
 
 function saveState(){
@@ -254,9 +242,7 @@ function loadState(){
    sanitizeLocationAssignments();
    locationGroups={main:!!st.locationGroups?.main,airstrip:!!st.locationGroups?.airstrip};
    document.getElementById('bagCount').textContent=bags;
-   TYPES.forEach(t=>document.getElementById(t.k+'Count').textContent=qty[t.k]);
    setMode(mode);
-   applyLocationGroupUI();
    return true;
  }catch(e){return false}
 }
@@ -280,21 +266,127 @@ function applyLocationGroupUI(){
    c.textContent=open?'−':'＋';
  });
 }
+
 let pickerTarget=null;
+let addLootStep='location';
+let addLootLocation='';
+function openAddLoot(){
+  addLootStep='location';
+  addLootLocation='';
+  renderAddLootDialog();
+  document.getElementById('locationPickerOverlay').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function renderAddLootDialog(){
+  const title=document.getElementById('pickerTitle');
+  const sub=document.getElementById('pickerSub');
+  const step=document.getElementById('pickerStep');
+  const box=document.getElementById('pickerOptions');
+  const back=document.getElementById('pickerBack');
+  const success=document.getElementById('pickerSuccess');
+  const clearBtn=document.getElementById('pickerClear');
+  if(!title||!sub||!step||!box)return;
+  if(addLootStep==='location'){
+    title.textContent='Add Loot';
+    sub.textContent='Choose where you found the loot.';
+    step.textContent='STEP 1 OF 2 • LOCATION';
+    back.style.display='none';
+    if(clearBtn)clearBtn.style.display='none';
+    success.style.display='none';
+    let html='<div class="pickerStep" style="margin-top:2px">🏝️ MAIN COMPOUND</div>';
+    MAIN_LOCATIONS.forEach(loc=>{html+='<button type="button" class="pickerOption" data-picker-action="location" data-location="'+escapeHtml(loc)+'">'+escapeHtml(loc)+'</button>';});
+    html+='<div class="pickerStep" style="margin-top:8px">🛩️ AIRSTRIP</div>';
+    AIRSTRIP_LOCATIONS.forEach(loc=>{html+='<button type="button" class="pickerOption" data-picker-action="location" data-location="'+escapeHtml(loc)+'">'+escapeHtml(loc)+'</button>';});
+    box.innerHTML=html;
+  }else{
+    title.textContent=addLootLocation;
+    sub.textContent='Choose the loot you found here.';
+    step.textContent='STEP 2 OF 2 • LOOT';
+    back.style.display='block';
+    if(clearBtn)clearBtn.style.display='inline-block';
+    success.style.display='none';
+    const valid=LOCATION_TYPES.filter(k=>isValidLocation(k,addLootLocation));
+    box.innerHTML=valid.map(k=>{
+      const t=TYPES.find(x=>x.k===k);
+      const count=(locationAssignments[k]||[]).filter(loc=>loc===addLootLocation).length;
+      return '<button type="button" class="pickerOption" data-picker-action="loot" data-loot="'+escapeHtml(k)+'">'+t.e+' '+escapeHtml(t.n)+'<small>'+t.space+'% bag space • '+count+' added here</small></button>';
+    }).join('');
+  }
+}
+function escapeHtml(value){
+  return String(value).replace(/[&<>'"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','\"':'&quot;'}[ch]));
+}
+
+function initLootPickerEvents(){
+  const box=document.getElementById('pickerOptions');
+  if(!box||box.dataset.bound==='1')return;
+  box.dataset.bound='1';
+  box.addEventListener('click',event=>{
+    const btn=event.target.closest('.pickerOption');
+    if(!btn||!box.contains(btn))return;
+    event.preventDefault();
+    event.stopPropagation();
+    if(btn.dataset.pickerAction==='location'){
+      selectAddLootLocation(btn.dataset.location||'');
+    }else if(btn.dataset.pickerAction==='loot'){
+      selectAddLoot(btn.dataset.loot||'');
+    }
+  });
+}
+
+function selectAddLootLocation(loc){
+  addLootLocation=loc;
+  addLootStep='loot';
+  renderAddLootDialog();
+}
+function selectAddLoot(k){
+  if(!addLootLocation)return;
+  const t=TYPES.find(x=>x.k===k);
+  addLootStack(k,addLootLocation);
+  const msg='✓ Added '+t.n+' to '+addLootLocation;
+  const success=document.getElementById('pickerSuccess');
+  if(success){success.textContent=msg;success.style.display='block';}
+  renderAddLootDialog();
+  // Re-display the success message after the dialog render.
+  if(success){success.textContent=msg;success.style.display='block';}
+}
+function addLootBack(){
+  addLootStep='location';
+  addLootLocation='';
+  renderAddLootDialog();
+}
+function clearCurrentLocation(){
+  if(!addLootLocation)return;
+  const loc=addLootLocation;
+  LOCATION_TYPES.forEach(k=>{
+    const arr=locationAssignments[k]||[];
+    const remaining=arr.filter(assigned=>assigned!==loc);
+    locationAssignments[k]=remaining;
+    qty[k]=remaining.length;
+    syncLocationAssignments(k);
+  });
+  renderLocations();
+  saveState();
+  const success=document.getElementById('pickerSuccess');
+  if(success){success.textContent='✓ Cleared all loot from '+loc;success.style.display='block';}
+  renderAddLootDialog();
+  if(success){success.textContent='✓ Cleared all loot from '+loc;success.style.display='block';}
+}
 function openLocationPicker(k,i){
- pickerTarget={k,i};
- const t=TYPES.find(x=>x.k===k);
- const current=locationAssignments[k][i]||'';
- document.getElementById('pickerTitle').textContent=t.e+' '+t.n+' '+(i+1);
- document.getElementById('pickerSub').textContent=current?'Current location: '+current:'Choose where this loot is located.';
- const box=document.getElementById('pickerOptions');
- let html='';
- LOCATION_OPTIONS[k].forEach(loc=>{
-   html+=`<button type="button" class="pickerOption" onclick="chooseLocation('${loc}')">${loc}${current===loc?' ✓':''}</button>`;
- });
- box.innerHTML=html;
- document.getElementById('locationPickerOverlay').classList.add('show');
- document.body.style.overflow='hidden';
+  // Legacy location picker retained only for saved-state compatibility; the new
+  // entry flow records loot and location together, so normal users never need it.
+  pickerTarget={k,i};
+  const t=TYPES.find(x=>x.k===k);
+  const current=locationAssignments[k][i]||'';
+  document.getElementById('pickerTitle').textContent=t.e+' '+t.n+' '+(i+1);
+  document.getElementById('pickerSub').textContent=current?'Current location: '+current:'Choose where this loot is located.';
+  document.getElementById('pickerStep').textContent='EDIT SAVED LOCATION';
+  document.getElementById('pickerBack').style.display='none';
+  document.getElementById('pickerSuccess').style.display='none';
+  const box=document.getElementById('pickerOptions');
+  box.innerHTML=(LOCATION_OPTIONS[k]||[]).map(loc=>'<button type="button" class="pickerOption" onclick="chooseLocation('+JSON.stringify(loc)+')">'+loc+(current===loc?' ✓':'')+'</button>').join('');
+  document.getElementById('locationPickerOverlay').classList.add('show');
+  document.body.style.overflow='hidden';
 }
 function chooseLocation(v){
  if(!pickerTarget)return;
@@ -307,36 +399,14 @@ function chooseLocation(v){
 }
 function closeLocationPicker(){
  pickerTarget=null;
+ addLootStep='location';
+ addLootLocation='';
  document.getElementById('locationPickerOverlay').classList.remove('show');
  document.body.style.overflow='';
-}
-function renderLocationRow(k,i){
- const t=TYPES.find(x=>x.k===k);
- const assigned=locationAssignments[k][i]||'';
- return '<div class="locrow"><div class="loctop"><span>'+t.e+' '+t.n+' '+(i+1)+'</span><span class="badge">'+(assigned||'Unassigned')+'</span></div><button type="button" class="locselect" onclick="openLocationPicker(\''+k+'\','+i+')">'+(assigned||'Select location…')+' <span style="float:right;opacity:.65">⌄</span></button></div>';
 }
 function renderLocations(){
  sanitizeLocationAssignments();
  LOCATION_TYPES.forEach(k=>syncLocationAssignments(k));
- const locationCard=document.getElementById('lootLocationsCard');
- const totalLoot=LOCATION_TYPES.reduce((sum,k)=>sum+Number(qty[k]||0),0);
- if(locationCard) locationCard.style.display=totalLoot>0?'block':'none';
- const unassigned=document.getElementById('unassignedLocations');
- const main=document.getElementById('mainLocationInputs');
- const air=document.getElementById('airstripLocationInputs');
- let uh='',mh='',ah='';
- LOCATION_TYPES.forEach(k=>{
-   for(let i=0;i<qty[k];i++){
-     const assigned=locationAssignments[k][i]||'';
-     if(!assigned)uh+=renderLocationRow(k,i);
-     else if(MAIN_LOCATIONS.includes(assigned))mh+=renderLocationRow(k,i);
-     else if(AIRSTRIP_LOCATIONS.includes(assigned))ah+=renderLocationRow(k,i);
-   }
- });
- unassigned.innerHTML=uh?'<div class="subhead">UNASSIGNED LOOT</div>'+uh:'';
- main.innerHTML=mh||'<div class="empty">No loot assigned to the main compound yet.</div>';
- air.innerHTML=ah||'<div class="empty">No loot assigned to the airstrip yet.</div>';
- applyLocationGroupUI();
  renderLocationSummary();
 }
 function renderLocationSummary(){
@@ -365,13 +435,14 @@ function renderLocationSummary(){
 function setMode(m){
  mode=m;
  const nb=document.getElementById('normalBtn'), hb=document.getElementById('hardBtn');
- nb.style.background=m==='normal'?'#fff':'#29324a'; nb.style.color=m==='normal'?'#0b1020':'#fff';
- hb.style.background=m==='hard'?'#fff':'#29324a'; hb.style.color=m==='hard'?'#0b1020':'#fff';
+ if(nb){nb.style.background=m==='normal'?'#fff':'#29324a'; nb.style.color=m==='normal'?'#0b1020':'#fff';}
+ if(hb){hb.style.background=m==='hard'?'#fff':'#29324a'; hb.style.color=m==='hard'?'#0b1020':'#fff';}
  saveState();
 }
 function updatePrimaryLabel(){}
 function renderCuts(){
  const ui=document.getElementById('cutsUI');
+ if(!ui)return;
  ui.innerHTML='';
  cuts.forEach((c,i)=>{
    const row=document.createElement('div'); row.className='cutrow';
@@ -400,13 +471,16 @@ function resetAll(){
  locationGroups={main:false,airstrip:false};
  LOCATION_TYPES.forEach(k=>locationAssignments[k]=[]);
  closeLocationPicker();
- try{localStorage.removeItem(LOCATION_STORAGE_KEY)}catch(e){}
  document.getElementById('bagCount').textContent='2';
- TYPES.forEach(t=>document.getElementById(t.k+'Count').textContent='0');
- document.getElementById('result').innerHTML='<div class="empty">Add your available loot, then hit <b>Optimize Loot</b>.</div>';
+ setMode('normal');
+ try{
+   localStorage.removeItem(LOCATION_STORAGE_KEY);
+   localStorage.removeItem('cayoCalcState_v17');
+ }catch(e){}
+ document.getElementById('result').innerHTML='<div class="empty">Add your loot, then hit <b>Optimize Loot</b>.</div>';
  renderCuts();
  renderLocations();
- applyLocationGroupUI();
+ syncBriefingLauncher();
 }
 
 /*
@@ -422,75 +496,196 @@ function optimize(){
    document.getElementById('result').innerHTML='<div class="empty">⚠️ Your player cuts must add up to <b>100%</b>, using 5% increments and at least 15% per player.</div>';
    return;
  }
- const cap=Math.round(bags*1000);
- let dp=Array(cap+1).fill(null);
- dp[0]={v:0,parts:[]};
 
- // First choose the highest-value combination of loot that fits the team's total capacity.
- // Paintings are indivisible; gold/coke/weed/cash are splittable.
- for(const t of TYPES){
-   for(let s=0;s<qty[t.k];s++){
+ /*
+  * Cayo route-aware optimization:
+  * Airstrip loot is collected first. With 2+ players, every Airstrip stack is indivisible; with 1 player, Airstrip split loot may remain fractional.
+  * Compound Gold/Cash may fill remaining capacity fractionally; Paintings remain indivisible.
+  *
+  * Location assignments are therefore part of the optimization input.
+  */
+ const airstripStacks=[];
+ const compoundStacks=[];
+ const unassigned=[];
+
+ LOCATION_TYPES.forEach(k=>{
+   const t=TYPES.find(x=>x.k===k);
+   for(let i=0;i<qty[k];i++){
+     const loc=locationAssignments[k]?.[i]||'';
+     const stack={t,index:i,location:loc};
+     if(AIRSTRIP_LOCATIONS.includes(loc)) airstripStacks.push(stack);
+     else if(MAIN_LOCATIONS.includes(loc)) compoundStacks.push(stack);
+     else unassigned.push(stack);
+   }
+ });
+
+ if(unassigned.length){
+   document.getElementById('result').innerHTML='<div class="empty">📍 Assign every loot stack to its location first, then hit <b>Optimize Loot</b>. Cayo Calc now respects the Airstrip → Main Compound route, so it needs to know which stacks are at the Airstrip.</div>';
+   return;
+ }
+
+ const cap=Math.round(bags*1000);
+
+ /*
+  * Player-count route rules:
+  * - SOLO: use Airstrip loot only. Compound loot is ignored for this run.
+  * - 2+ PLAYERS: use Compound loot first. Airstrip loot is allowed only when
+  *   the available Compound loot cannot fill all bags.
+  *
+  * We decide this from available Compound bag-space before optimizing value.
+  * If Compound can fill every bag, Airstrip is excluded entirely. If it cannot,
+  * Airstrip becomes eligible and the highest-value rule applies across both areas.
+  */
+ const airstripFixed=(bags>1);
+ let useAirstrip=false;
+ if(bags===1){
+   useAirstrip=true;
+ }else{
+   const compoundCapacity=compoundStacks.reduce((sum,p)=>sum+p.t.space,0);
+   useAirstrip=compoundCapacity+0.001<bags*100;
+ }
+
+ const activeAirstripStacks=useAirstrip?airstripStacks:[];
+ const activeCompoundStacks=bags===1?[]:compoundStacks;
+
+ let airDP=Array(cap+1).fill(null);
+ airDP[0]={v:0,parts:[]};
+ for(const p of activeAirstripStacks){
+   const units=Math.round(p.t.space*10);
+   const next=airDP.map(x=>x?{v:x.v,parts:x.parts.slice()}:null);
+   for(let c=0;c<=cap;c++){
+     if(!airDP[c])continue;
+     if(airstripFixed){
+       if(c+units>cap)continue;
+       const nv=airDP[c].v+p.t.value;
+       if(!next[c+units] || nv>next[c+units].v+0.001){
+         next[c+units]={v:nv,parts:airDP[c].parts.concat([{t:p.t,space:p.t.space,index:p.index,location:p.location,phase:'airstrip'}])};
+       }
+     }else if(p.t.split){
+       for(let take=1;take<=units && c+take<=cap;take++){
+         const frac=take/units;
+         const nv=airDP[c].v+p.t.value*frac;
+         if(!next[c+take] || nv>next[c+take].v+0.001){
+           next[c+take]={v:nv,parts:airDP[c].parts.concat([{t:p.t,space:take/10,index:p.index,location:p.location,phase:'airstrip'}])};
+         }
+       }
+     }else if(c+units<=cap){
+       const nv=airDP[c].v+p.t.value;
+       if(!next[c+units] || nv>next[c+units].v+0.001){
+         next[c+units]={v:nv,parts:airDP[c].parts.concat([{t:p.t,space:p.t.space,index:p.index,location:p.location,phase:'airstrip'}])};
+       }
+     }
+   }
+   airDP=next;
+ }
+
+ // Phase 2: for every possible whole-Airstrip selection, fill the remaining
+ // capacity with the best possible Compound combination. Compound Paintings
+ // are whole-only; Gold/Cash are splittable.
+ let best=null;
+ for(let airUsed=0;airUsed<=cap;airUsed++){
+   const airState=airDP[airUsed];
+   if(!airState)continue;
+   const remaining=cap-airUsed;
+   let dp=Array(remaining+1).fill(null);
+   dp[0]={v:0,parts:[]};
+
+   for(const p of activeCompoundStacks){
+     const t=p.t;
      const units=Math.round(t.space*10);
      const next=dp.map(x=>x?{v:x.v,parts:x.parts.slice()}:null);
-     for(let c=0;c<=cap;c++){
+     for(let c=0;c<=remaining;c++){
        if(!dp[c])continue;
        if(t.split){
-         for(let take=1;take<=units && c+take<=cap;take++){
+         for(let take=1;take<=units && c+take<=remaining;take++){
            const frac=take/units;
            const nv=dp[c].v+t.value*frac;
-           if(!next[c+take]||nv>next[c+take].v+0.001)
-             next[c+take]={v:nv,parts:dp[c].parts.concat([{t:t,space:take/10}])};
+           if(!next[c+take] || nv>next[c+take].v+0.001){
+             next[c+take]={v:nv,parts:dp[c].parts.concat([{t:t,space:take/10,index:p.index,location:p.location,phase:'compound'}])};
+           }
          }
-       }else if(c+units<=cap){
+       }else if(c+units<=remaining){
          const nv=dp[c].v+t.value;
-         if(!next[c+units]||nv>next[c+units].v+0.001)
-           next[c+units]={v:nv,parts:dp[c].parts.concat([{t:t,space:t.space}])};
+         if(!next[c+units] || nv>next[c+units].v+0.001){
+           next[c+units]={v:nv,parts:dp[c].parts.concat([{t:t,space:t.space,index:p.index,location:p.location,phase:'compound'}])};
+         }
        }
      }
      dp=next;
    }
+
+   for(let c=0;c<=remaining;c++){
+     if(!dp[c])continue;
+     const totalValue=airState.v+dp[c].v;
+     const compoundUsed=c;
+     /*
+      * When 2+ players need Airstrip loot, Compound space is the priority: we
+      * maximize how much of the available bag capacity is filled by Compound
+      * loot before using Airstrip loot to cover the shortfall. Value breaks
+      * ties between equally full Compound selections. Solo runs simply maximize
+      * Airstrip value because Compound loot is excluded above.
+      */
+     /*
+      * Once Airstrip loot is eligible (because Compound capacity is insufficient),
+      * the normal highest-value rule takes over across all eligible loot.
+      * Compound loot is NOT given a value-priority override: Airstrip cocaine,
+      * for example, can beat lower-value Compound weed when both are eligible.
+      * The route gate above is the only thing that decides whether Airstrip may
+      * participate at all.
+      */
+     const better = !best || totalValue>best.v+0.001;
+     if(better){
+       best={v:totalValue,compoundUsed,parts:airState.parts.concat(dp[c].parts)};
+     }
+   }
  }
 
- let best=null;
- for(let c=0;c<=cap;c++){
-   if(dp[c]&&(!best||dp[c].v>best.v+0.001))best=dp[c];
- }
  if(!best){
    document.getElementById('result').innerHTML='<div class="empty">Add some loot first.</div>';
    return;
  }
 
- // Hidden payout/value model is retained internally for the optimizer.
- const hiddenSecondaryValue=best.v;
-
  const out=Array.from({length:bags},()=>({used:0,items:[]}));
 
- // IMPORTANT: allocate indivisible loot first.
- // This keeps paintings whole and, where possible, groups them together.
- const whole=best.parts.filter(p=>!p.t.split).sort((a,b)=>b.space-a.space);
- const split=best.parts.filter(p=>p.t.split).sort((a,b)=>b.space-a.space);
-
- for(const p of whole){
-   // Best-fit: put the whole item in the fullest bag where it still fits.
+ // Allocate Airstrip loot first. For 2+ players these stacks are fixed;
+ // for a solo run, split Airstrip loot is allowed.
+ const airWhole=best.parts.filter(p=>p.phase==='airstrip');
+ for(const p of airWhole){
    let candidates=out
      .map((b,i)=>({b,i,room:100-b.used}))
      .filter(x=>x.room+0.001>=p.space)
      .sort((a,b)=>a.room-b.room);
    if(candidates.length){
      const b=candidates[0].b;
-     b.items.push({t:p.t,space:p.space});
+     b.items.push({t:p.t,space:p.space,phase:'airstrip'});
      b.used+=p.space;
    }
  }
 
- // Now use splittable loot to fill the remaining spaces.
- for(const p of split){
+ // Compound loot fills whatever capacity remains. Only Compound split loot
+ // may be fractional; Paintings remain whole stacks.
+ const compoundWhole=best.parts.filter(p=>p.phase==='compound'&&!p.t.split).sort((a,b)=>b.space-a.space);
+ const compoundSplit=best.parts.filter(p=>p.phase==='compound'&&p.t.split).sort((a,b)=>b.space-a.space);
+
+ for(const p of compoundWhole){
+   let candidates=out
+     .map((b,i)=>({b,i,room:100-b.used}))
+     .filter(x=>x.room+0.001>=p.space)
+     .sort((a,b)=>a.room-b.room);
+   if(candidates.length){
+     const b=candidates[0].b;
+     b.items.push({t:p.t,space:p.space,phase:'compound'});
+     b.used+=p.space;
+   }
+ }
+
+ for(const p of compoundSplit){
    let rem=p.space;
    for(const b of out){
      if(rem<=0.001)break;
      const take=Math.min(100-b.used,rem);
      if(take>0){
-       b.items.push({t:p.t,space:take});
+       b.items.push({t:p.t,space:take,phase:'compound'});
        b.used+=take;
        rem-=take;
      }
@@ -502,14 +697,15 @@ function optimize(){
    const map=new Map();
    b.items.forEach(it=>{
      const k=it.t.k;
-     if(!map.has(k))map.set(k,{t:it.t,space:0});
+     if(!map.has(k))map.set(k,{t:it.t,space:0,phases:[]});
      map.get(k).space+=it.space;
+     if(it.phase && !map.get(k).phases.includes(it.phase))map.get(k).phases.push(it.phase);
    });
    b.items=[...map.values()].sort((a,b)=>b.space-a.space);
  });
 
  let html='<div class="section">🏆 BEST LOOT DISTRIBUTION</div>';
- html+='<div class="note" style="margin-top:0">Optimized for the highest-value secondary loot while filling the available bags.</div>';
+ html+='<div class="note" style="margin-top:0">Optimized for the highest-value secondary loot while respecting your player count and route. '+(bags===1?'Solo runs use Airstrip loot only; Airstrip split loot may be taken fractionally.':(useAirstrip?'Compound loot is prioritized; Airstrip loot is used only when the Compound cannot fill all bags.':'Compound loot is sufficient to fill all bags, so Airstrip loot is ignored. Airstrip stacks stay whole with 2+ players.'))+' Compound Gold and Cash may be split.</div>';
  html+='<div class="bags" style="margin-top:12px">';
 
  out.forEach((b,i)=>{
@@ -523,17 +719,16 @@ function optimize(){
    });
    html+='</div>';
  });
- html+='</div><div class="note"><b>Loot rules:</b> paintings are whole 50% stacks and cannot be chopped. Gold, cocaine, weed and cash may be taken partially.</div>';
+ html+='</div><div class="note"><b>Loot rules:</b> '+(bags===1?'Solo runs use Airstrip loot only; Airstrip split loot may be taken fractionally.':(useAirstrip?'With 2+ players, Compound loot is used first and Airstrip loot fills any remaining capacity; Airstrip stacks are whole-only.':'With 2+ players, Compound loot is used exclusively when it can fill all bags; Airstrip loot is ignored.'))+' Compound paintings are whole 50% stacks; Compound Gold and Cash may be taken partially.</div>';
  document.getElementById('result').innerHTML=html;
 }
-
 /* ===== ISOLATED MISSION BRIEFING LOGIC ===== */
 function briefingLootByLocation(loc){
   const found=[];
   LOCATION_TYPES.forEach(k=>{
     const t=TYPES.find(x=>x.k===k);
     (locationAssignments[k]||[]).forEach((assigned,i)=>{
-      if(assigned===loc) found.push(t.e+' '+t.n+' '+(i+1));
+      if(assigned===loc) found.push(t.e+' '+t.n);
     });
   });
   return found;
@@ -633,20 +828,12 @@ function initBriefingObserver(){
   if(r){briefingObserver.observe(r,{childList:true,subtree:true});syncBriefingLauncher();}
 }
 
+initLootPickerEvents();
 const restored=loadState();
 renderCuts();
 renderLocations();
 if(restored)saveState();
 initBriefingObserver();
 </script>
-
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js');
-  });
-}
-</script>
-
 </body>
 </html>
